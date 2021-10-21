@@ -6,7 +6,7 @@ pipeline {
         timestamps()
     }
     environment {
-        build_number = ${BUILD_NUMBER}
+        build_number = "${BUILD_NUMBER}"
     }
     stages {
         stage("Build") {
