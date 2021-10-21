@@ -23,7 +23,8 @@ pipeline {
                     steps {
                         echo "Windows Test"
                         script {
-                            if (runShell('grep \'%BUILD_NUMBER%\' index.html')) {
+                            def file = "index.html"
+                            if (file.count("%BUILD_NUMBER%") > 0) {
                                 echo "great success"
                             }
                         }
