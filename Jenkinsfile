@@ -22,6 +22,11 @@ pipeline {
                 stage("Test on Windows") {
                     steps {
                         echo "Windows Test"
+                        script {
+                            if ("%BUILD_NUMBER%" not in index.html) {
+                                echo "great success"
+                            }
+                        }
                     }
                 }
                 stage("Test on Linux") {
