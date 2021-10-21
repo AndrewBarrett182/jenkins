@@ -23,8 +23,8 @@ pipeline {
                     steps {
                         echo "Windows Test"
                         script {
-                            // def file = "index.html"
-                            if ("index.html".count("%BUILD_NUMBER%") == 0) {
+                            def file = "index.html"
+                            if (file.count("%BUILD_NUMBER%") == 0) {
                                 echo "great success"
                             }
                         }
