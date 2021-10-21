@@ -15,6 +15,7 @@ pipeline {
             steps {
                 echo "Build"
                 printFromFunction()
+                replaceString()
             }
         }
         stage("Test") {
