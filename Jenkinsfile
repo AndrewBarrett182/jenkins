@@ -5,6 +5,9 @@ pipeline {
     options {
         timestamps()
     }
+    environment {
+        build_number = ${BUILD_NUMBER}
+    }
     stages {
         stage("Build") {
             steps {
@@ -22,7 +25,7 @@ pipeline {
                 stage("Test on Windows") {
                     steps {
                         echo "Windows Test"
-                        sh "./test.sh"
+                        sh "./test.sh ${build_number}"
                     }
                 }
                 stage("Test on Linux") {
