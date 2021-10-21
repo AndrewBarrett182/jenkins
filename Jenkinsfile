@@ -24,7 +24,7 @@ pipeline {
                         echo "Windows Test"
                         script {
                             def file = "index.html"
-                            if (file.count("%BUILD_NUMBER%") > 0) {
+                            if (file.count("%BUILD_NUMBER%") == 0) {
                                 echo "great success"
                             }
                         }
