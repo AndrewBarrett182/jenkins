@@ -1,15 +1,5 @@
 @Library("jenkins_shared") _
 
-def printFromFunction() {
-    println("I am priting from a function")
-}
-
-def replaceString() {
-    def text = readFile file: "index.html"
-    text = text.replaceAll("%BUILD_NUMBER%", "${BUILD_NUMBER}")
-    writeFile file: "index.html", text: text
-}
-
 pipeline {
     agent any
     options {
@@ -19,10 +9,12 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Build"
-                printFromFunction()
-                replaceString()
                 hello() 
                 helloVariable("Andrew")
+                script {
+                    utils.printFromFunction()
+                    utils.replaceString()
+                }
             }
         }
         stage("Test") {
