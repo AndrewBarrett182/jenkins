@@ -6,9 +6,14 @@ pipeline {
                 echo "Build"
             }
         }
-        stage("Test") {
+        stage("Test on Windows") {
             steps {
-                echo "Test"
+                echo "Windows Test"
+            }
+        }
+        stage("Test on Linux") {
+            steps {
+                echo "Linux Test"
             }
         }
         stage("Deploy") {
