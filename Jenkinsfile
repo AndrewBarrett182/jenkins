@@ -22,6 +22,7 @@ pipeline {
                 printFromFunction()
                 replaceString()
                 hello() 
+                helloVariable("Andrew")
             }
         }
         stage("Test") {
