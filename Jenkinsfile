@@ -23,7 +23,7 @@ pipeline {
                     steps {
                         echo "Windows Test"
                         script {
-                            if ("%BUILD_NUMBER%" not in index.html) {
+                            if (runShell('grep \'%BUILD_NUMBER%\' index.html')) {
                                 echo "great success"
                             }
                         }
