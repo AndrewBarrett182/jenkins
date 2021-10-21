@@ -22,13 +22,7 @@ pipeline {
                 stage("Test on Windows") {
                     steps {
                         echo "Windows Test"
-                        script {
-                            sh "cat index.html | grep 'Deployed by Jenkins job: ${BUILD_NUMBER}'"
-                            // def file = "index.html"
-                            // if (file.count("%BUILD_NUMBER%") == 0) {
-                            //     echo "great success"
-                            // }
-                        }
+                        sh "test.sh"
                     }
                 }
                 stage("Test on Linux") {
