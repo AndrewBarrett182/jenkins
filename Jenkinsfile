@@ -23,10 +23,11 @@ pipeline {
                     steps {
                         echo "Windows Test"
                         script {
-                            def file = "index.html"
-                            if (file.count("%BUILD_NUMBER%") == 0) {
-                                echo "great success"
-                            }
+                            sh "cat index.html | grep 'Deployed by Jenkins job: ${BUILD_NUMBER}'"
+                            // def file = "index.html"
+                            // if (file.count("%BUILD_NUMBER%") == 0) {
+                            //     echo "great success"
+                            // }
                         }
                     }
                 }
