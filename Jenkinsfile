@@ -8,6 +8,7 @@ pipeline {
     environment {
         build_number = "${BUILD_NUMBER}"
         MY_ENV_VAR = "test_env_var"
+        GITHUB = credentials("github")
     }
     parameters {
         string(name: "Name", defaultValue: "Andrew", description: "Your name")
