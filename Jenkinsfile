@@ -12,6 +12,10 @@ pipeline {
     }
     parameters {
         string(name: "Name", defaultValue: "Andrew", description: "Your name")
+        text(name: 'DEPLOY_TEXT', defaultValue: 'One\nTwo\nThree\n', description: '')
+        booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: '')
+        choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '')
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'A secret password')
     }
     stages {
         stage("Build") {
