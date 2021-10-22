@@ -29,7 +29,7 @@ pipeline {
                 }
                 echo "${MY_ENV_VAR}"
                 echo "${params.Name}"
-                sh "mkdir docker"
+                sh "mkdir -p docker"
             }
         }
         stage("Docker Build") {
