@@ -25,6 +25,7 @@ pipeline {
                 }
                 echo "${MY_ENV_VAR}"
                 echo "${params.Name}"
+                echo "${GITHUB}"
             }
         }
         stage("Test") {
