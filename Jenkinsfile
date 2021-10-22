@@ -4,6 +4,7 @@ pipeline {
     agent any
     options {
         timestamps()
+        disableConcurrentBuilds()
     }
     environment {
         build_number = "${BUILD_NUMBER}"
