@@ -46,6 +46,19 @@ pipeline {
                 """
             }
         }
+        stage("Docker Build w/ Python") {
+            agent {
+                docker {
+                    image "python:latest"
+                    args "-v ${WORKSPACE}/docker:/home/python"
+                }
+            }
+            steps {
+                sh """
+                    python --version > /home/python/docker_python_version
+                """
+            }
+        }
         stage("Test") {
             parallel {
                 stage("Test on Windows") {
