@@ -7,6 +7,10 @@ pipeline {
     }
     environment {
         build_number = "${BUILD_NUMBER}"
+        MY_ENV_VAR = "test_env_var"
+    }
+    parameters {
+        string(name: "Name", defaultValue: "Andrew", description: "Your name")
     }
     stages {
         stage("Build") {
@@ -18,6 +22,8 @@ pipeline {
                     utils.printFromFunction()
                     utils.replaceString()
                 }
+                echo "${MY_ENV_VAR}"
+                echo "${params.Name}"
             }
         }
         stage("Test") {
