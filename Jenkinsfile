@@ -8,7 +8,7 @@ pipeline {
     environment {
         build_number = "${BUILD_NUMBER}"
         MY_ENV_VAR = "test_env_var"
-        GITHUB = credentials("github")
+        // GITHUB = credentials("github")
     }
     parameters {
         string(name: "Name", defaultValue: "Andrew", description: "Your name")
@@ -25,7 +25,6 @@ pipeline {
                 }
                 echo "${MY_ENV_VAR}"
                 echo "${params.Name}"
-                echo "${GITHUB}"
             }
         }
         stage("Test") {
